@@ -169,3 +169,12 @@ button
 {
     color:blue;
 }
+
+.error
+{
+    display: none;
+    font:10px Montserrat-LightItalic;
+    color:red;
+    margin:2px auto 0px 10px;
+    position: relative;
+}
