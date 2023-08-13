@@ -99,6 +99,7 @@ body
     margin:0px auto 0px 17px;
     border-radius: 15px;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .category div:nth-child(2)
@@ -136,6 +137,8 @@ body
     flex-direction: column;
     margin:auto;
     cursor: pointer;
+    padding: 7px;
+    border-radius: 10px;
 }
 
 .wall div img 
@@ -148,7 +151,7 @@ body
 .wall div p 
 {
     font:12px Montserrat-Regular;
-    color:rgb(255,95,51);
+    color:#3a3a3a;
     margin:10px auto 0px auto;
 }
 
@@ -165,11 +168,15 @@ body
     flex-direction: column;
     margin:15px auto 0px 10px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    overflow: hidden;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgba(255,235,229);
 }
 
 .prod_img 
 {
-    width:150px;
+    width:160px;
     height: 175px;
     margin:0;
 }
