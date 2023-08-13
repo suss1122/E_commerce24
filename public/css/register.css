@@ -178,3 +178,26 @@ button
     margin:2px auto 0px 10px;
     position: relative;
 }
+
+@media screen and (min-width:800px)
+{
+    button:hover
+    {
+        background-color: rgb(189, 71, 38);
+    }
+
+    .social img:hover
+    {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .reg a:hover 
+    {
+        text-decoration: underline;
+    }
+
+    .mob_form
+    {
+        padding:20px 40px 20px 40px;
+    }
+}
