@@ -1,0 +1,202 @@
+*{-webkit-tap-highlight-color: transparent; display:flex; text-decoration: none;}
+
+head{display: none;}
+
+body
+{
+    flex-direction: column;
+    margin: 0;
+    width: 100%;
+    font-size: 0;
+}
+
+.mob_topbar
+{
+    width:100%;
+    margin:20px 0px 0px 0px;
+}
+
+.search
+{
+    margin:auto;
+    border-radius: 10px;
+    border:1px solid rgba(114, 114, 114, 0.5);
+    padding:10px 7px 10px 7px;
+    background-color: white;
+    transition-property: border;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+}
+
+.search img
+{
+    width: 20px;
+    height: 20px;
+    margin:auto 0px auto 5px;
+}
+
+.search input 
+{
+    width:200px;
+    background-color: transparent;
+    border:none;
+    margin:auto 0px auto 10px;
+    font:12px Montserrat-Medium;
+    color:black;
+}
+
+.search input::placeholder{font:12px Montserrat-Regular;}
+
+.search input:focus{outline: none;}
+
+.options 
+{
+    cursor: pointer;
+    width:25px;
+    height: 25px;
+    margin:auto;
+}
+
+.slide 
+{
+    flex-direction: column;
+    width:92%;
+    height: auto;
+    margin:30px auto 0px auto;
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.slide img 
+{
+    width: 100%;
+    height: auto;
+    margin:0;
+}
+
+.slide p 
+{
+    font:15px Montserrat-Medium;
+    color:white;
+    background-color: #3a3a3a;
+    margin:0px 0px -34.64px auto;
+    padding: 8px 20px 8px 15px;
+    position: relative;
+    border-radius: 10px 0px 0px 10px;
+    bottom:47px;
+}
+
+.category
+{
+    width:100%;
+    margin:20px 0px 0px 0px;
+}
+
+.category div 
+{
+    flex-direction: column;
+    margin:0px auto 0px 17px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.category div:nth-child(2)
+{
+    margin:0px 17px 0px auto;
+}
+
+.category div img 
+{
+    width:165px;
+    height: auto;
+    margin:0;
+}
+
+.category div p 
+{
+    display: block;
+    font:15px Montserrat-Medium;
+    color:white;
+    padding:8px 0px 8px 0px;
+    background-color: #3a3a3a;
+    margin:0;
+    width:100%;
+    text-align: center;
+}
+
+.wall
+{
+    width: 100%;
+    margin:40px 0px 0px 0px;
+}
+
+.wall div 
+{
+    flex-direction: column;
+    margin:auto;
+    cursor: pointer;
+}
+
+.wall div img 
+{
+    width:25px;
+    height: 25px;
+    margin:0px auto 0px auto;
+}
+
+.wall div p 
+{
+    font:12px Montserrat-Regular;
+    color:rgb(255,95,51);
+    margin:10px auto 0px auto;
+}
+
+.shop
+{
+    margin:30px auto 0px auto;
+    max-width: 92%;
+    width:92%;
+    flex-wrap: wrap;
+}
+
+.item 
+{
+    flex-direction: column;
+    margin:15px auto 0px 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.prod_img 
+{
+    width:150px;
+    height: 175px;
+    margin:0;
+}
+
+.stars
+{
+    height:15px;
+    width: auto;
+    margin:10px auto 0px 5px;
+}
+
+.name, .brand, .price
+{
+    font:17px Montserrat-Medium;
+    color:black;
+    margin:2px auto 0px 5px;
+}
+
+.brand
+{
+    font:13px Montserrat-Regular;
+    color:#3a3a3a;
+}
+
+.price
+{
+    font-size:13px;
+    color:rgb(255,95,51);
+    margin-bottom: 10px;
+}
