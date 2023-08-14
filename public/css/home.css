@@ -128,16 +128,15 @@ body
 
 .wall
 {
-    width: 348.5px;
-    max-width: 348.5px;
-    margin:20px auto 0px auto;
-    flex-wrap: wrap;
+    width: 95%;
+    max-width: 95%;
+    margin:40px auto 0px auto;
 }
 
 .wall div 
 {
     flex-direction: column;
-    margin:20px auto auto auto;
+    margin:0px auto auto auto;
     cursor: pointer;
     width:70px;
     height: 65px;
