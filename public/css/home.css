@@ -128,8 +128,8 @@ body
 
 .wall
 {
-    width: 92%;
-    max-width: 92%;
+    width: 348.5px;
+    max-width: 348.5px;
     margin:20px auto 0px auto;
     flex-wrap: wrap;
 }
