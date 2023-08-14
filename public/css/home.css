@@ -128,31 +128,35 @@ body
 
 .wall
 {
-    width: 100%;
-    margin:40px 0px 0px 0px;
+    width: 92%;
+    max-width: 92%;
+    margin:20px auto 0px auto;
+    flex-wrap: wrap;
 }
 
 .wall div 
 {
     flex-direction: column;
-    margin:auto;
+    margin:20px auto auto auto;
     cursor: pointer;
-    padding: 7px;
+    width:70px;
+    height: 65px;
     border-radius: 10px;
+    background-color: rgb(255,235,229);
 }
 
 .wall div img 
 {
     width:25px;
     height: 25px;
-    margin:0px auto 0px auto;
+    margin:auto;
 }
 
 .wall div p 
 {
     font:12px Montserrat-Regular;
     color:#3a3a3a;
-    margin:10px auto 0px auto;
+    margin:auto;
 }
 
 .shop
@@ -171,7 +175,6 @@ body
     overflow: hidden;
     border-radius: 5px;
     cursor: pointer;
-    background-color: rgba(255,235,229);
 }
 
 .prod_img 
@@ -179,6 +182,7 @@ body
     width:160px;
     height: 175px;
     margin:0;
+    border-bottom: 1px solid rgba(114, 114, 114, 0.5);
 }
 
 .stars
