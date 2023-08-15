@@ -100,3 +100,28 @@ body
     height: 25px;
     margin:auto auto auto 10px;
 }
+
+.pc_grid{display: none;}
+
+@media screen and (min-width:800px)
+{
+    .desc, .abt, .ans, .addtocart, .prod_img, .price{display: none;}
+
+    .pc_grid, .pc_grid .desc, .pc_grid .abt, .pc_grid .ans, .pc_grid .addtocart, .pc_grid .prod_img, .pc_grid .price{display: flex;}
+
+    .pc_grid{margin:40px auto 50px auto; width:92%; max-width: 92%;}
+
+    .pc_grid .prod_img{width: 300px; height: 400px; margin:0px auto auto auto;}
+
+    .right
+    {
+        flex-direction: column;
+        margin:auto auto auto 30px;
+    }
+
+    .pc_grid .addtocart{width:60%;}
+
+    .pc_grid .addtocart:hover {background-color: rgb(205, 204, 204);}
+
+    .pc_grid div:nth-child(8):hover {background-color:rgb(213, 146, 127) ;}
+}
