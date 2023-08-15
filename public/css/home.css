@@ -333,6 +333,7 @@ body
     {
         display:flex;
         width:fit-content;
+        max-width: 95%;
         margin:30px auto 0px 30px;
     }
 
@@ -394,4 +395,13 @@ body
     .left p:hover, .pc_cat p:hover {background-color: #292929;}
 
     .item:hover {background-color: rgb(218, 218, 218); outline:1px solid rgba(114, 114, 114, 0.5)}
+
+    .prod_img {width: 180px; height: 200px;}
+
+    .shop {width:95%; max-width: 95%;}
+
+    .shop .item:nth-child(13)
+    {
+        margin-right: 2%;
+    }
 }
