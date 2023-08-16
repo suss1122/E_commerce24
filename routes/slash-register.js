@@ -1,27 +1,37 @@
 const exp = require('express');
 const path = require('path');
 const route = exp.Router();
-const mongoose = require('mongoose');
 const newProfile = require('../models/profiles');
 
 route.get('/register', (req,res) => {
     res.sendFile(path.join(__dirname, '../', 'views', 'register.html'));
 })
 
-const struc = new mongoose.Schema({Username:String, Email:String, Password:String, Id:String, Cart:Array, Orders:Array});
-const data = mongoose.model("profile", struc);
-
 route.post('/register', (req,res) => {
-
-
     
-    const obj = new newProfile(req.body.USERNAME, req.body.EMAIL, req.body.PASSWORD);
-    const tmp = obj.get();
+    var flag1,flag2,flag3;
 
-    const uplaod = new data({Username:tmp.name, Email:tmp.email, Password:tmp.pass, Id:tmp.id, Cart:tmp.cart, Orders:tmp.orders});
-    uplaod.save();
+    flag1='ok';
+    if ((req.body.USERNAME).length<5) {flag1='short'}
 
-    res.send("<h1>Account Registered</h1>");
+    flag2='ok';
+    const pattern = new RegExp("@gmail.com");
+    if (!pattern.test(req.body.EMAIL)) {flag2='invalid'}
+
+    flag3='ok';
+    if ((req.body.PASSWORD).length<8){flag3='short'}
+    
+    if (flag1=='ok' && flag2=='ok' && flag3=='ok')
+    {
+        const obj = new newProfile(req.body.USERNAME, req.body.EMAIL, req.body.PASSWORD);
+        obj.save_profile();
+        res.send("<h1>Account Registered</h1>");
+    }
+    else 
+    {
+        const data = {f1:flag1, f2:flag2, f3:flag3};
+        res.render('register', data);
+    }
 })
 
 module.exports = route;

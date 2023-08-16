@@ -11,6 +11,7 @@ mongoose.connect("mongodb://127.0.0.1:27017/Ecommerce", {useNewUrlParser:true});
 
 app.use(BP.urlencoded({extended:true}));
 app.use(exp.static(path.join('public')));
+app.set('view engine', 'ejs');
 
 app.use(slashRoute);
 app.use(slashRegister);

@@ -1,3 +1,8 @@
+const mongoose = require('mongoose');
+
+const struc = new mongoose.Schema({Username:String, Email:String, Password:String, Id:String, Cart:Array, Orders:Array});
+const Profile = mongoose.model("profile", struc);
+
 module.exports = class newProfile
 {
     constructor(name, email, pass)
@@ -8,9 +13,21 @@ module.exports = class newProfile
         this.id = Math.random().toString();
     }
 
-    get()
+    save_profile()
     {
-        const obj = {name:this.name, email:this.email, pass:this.pass, id:this.id, cart:[], orders:[]};
-        return obj;
+        const uplaod = new Profile({Username:this.name, Email:this.email, Password:this.pass, Id:this.id, Cart:[], Orders:[]});
+        uplaod.save();
+    }
+
+    static async getAllProf()
+    {
+        const arr = [];
+        await Profile.find({}).then(ans => {
+            for(let i=0; i<ans.length; i++)
+            {
+                arr.push(ans[i]);
+            }
+        });
+        return arr;
     }
 }
