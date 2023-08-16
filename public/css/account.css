@@ -1,0 +1,127 @@
+*{display:flex; -webkit-tap-highlight-color: transparent; text-decoration: none;}
+
+head{display: none;}
+
+body
+{
+    flex-direction: column;
+    margin:0;
+    width:100%;
+    font-size: 0;
+}
+
+.back{margin:20px auto 0px 20px;}
+.back img{width:30px; height: auto;}
+
+.abt
+{
+    font:20px Montserrat-Bold;
+    color:rgba(204,44,0);
+    margin:30px auto 0px 20px;
+}
+
+.ans{margin:10px auto 0px 20px;}
+
+.ans p:nth-child(1)
+{
+    font:15px Montserrat-Medium;
+    color:#3a3a3a;
+    margin:auto 0px auto 0px;
+}
+
+.ans p:nth-child(2)
+{
+    font:15px Montserrat-Regular;
+    color:#3a3a3a;
+    margin:auto 0px auto 0px;
+}
+
+.addtocart
+{
+    width:90%;
+    margin:30px auto 0px auto;
+    padding:7px 0px 7px 0px;
+    background-color: rgba(255,175,153);
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.addtocart p 
+{
+    font:20px Montserrat-Medium;
+    color:#3a3a3a;
+    margin:auto 10px auto auto;
+}
+
+.addtocart img 
+{
+    width:25px;
+    height: 25px;
+    margin:auto auto auto 10px;
+}
+
+.orders
+{
+    width:92%;
+    max-width: 92%;
+    flex-wrap: wrap;
+    margin:30px auto 70px auto;
+}
+
+.order
+{
+    padding:10px;
+    border-radius: 10px;
+    border:1px solid rgba(144, 144, 144, 0.5);
+    margin:10px auto 0px auto;
+}
+
+.order .left
+{
+    width:100px;
+    height: 130px;
+    margin:auto;
+    padding-right: 20px;
+    border-right: 1px solid rgba(144, 144, 144, 0.5);
+}
+
+.right{flex-direction: column; margin:auto}
+
+.prod_name
+{
+    font:15px Montserrat-ExtraBold;
+    color:#3a3a3a;
+    margin:20px auto 0px 20px;
+    max-width: 90%;
+    word-wrap: break-word;
+}
+
+.stars
+{
+    height:12px;
+    width: auto;
+    margin:5px auto 0px 20px;
+}
+
+.ans
+{
+    font:10px Montserrat-Medium;
+    color:#3a3a3a;
+    margin:10px auto 0px 20px;
+}
+
+.check
+{
+    font:10px Montserrat-Regular;
+    color:blue;
+    text-decoration: underline;
+    margin:15px auto 0px auto;
+    cursor: pointer;
+}
+
+@media screen and (min-width:800px)
+{
+    .addtocart{width:30%;}
+
+    .addtocart:hover {background-color:rgb(213, 146, 127);}
+}
