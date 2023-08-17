@@ -7,16 +7,22 @@ route.get('/register', (req,res) => {
     res.sendFile(path.join(__dirname, '../', 'views', 'register.html'));
 })
 
-route.post('/register', (req,res) => {
+route.post('/register', async (req,res) => {
     
     var flag1,flag2,flag3;
 
     flag1='ok';
     if ((req.body.USERNAME).length<5) {flag1='short'}
+    let temp;
+    await newProfile.checkUsername(req.body.USERNAME).then(ans => {temp=ans});
+    if(temp!=null) {flag1='occupied'}
 
     flag2='ok';
     const pattern = new RegExp("@gmail.com");
     if (!pattern.test(req.body.EMAIL)) {flag2='invalid'}
+    let tmp;
+    await newProfile.checkEmail(req.body.EMAIL).then(ans => {tmp=ans});
+    if (tmp!=null) {flag2='occupied'}
 
     flag3='ok';
     if ((req.body.PASSWORD).length<8){flag3='short'}

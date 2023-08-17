@@ -19,15 +19,17 @@ module.exports = class newProfile
         uplaod.save();
     }
 
-    static async getAllProf()
+    static async checkUsername(input)
     {
-        const arr = [];
-        await Profile.find({}).then(ans => {
-            for(let i=0; i<ans.length; i++)
-            {
-                arr.push(ans[i]);
-            }
-        });
-        return arr;
+        let check;
+        await Profile.findOne({Username:input}).then(ans => {check=ans})
+        return check;
+    }
+
+    static async checkEmail(input)
+    {
+        let check;
+        await Profile.findOne({Email:input}).then(ans => {check=ans})
+        return check;
     }
 }
