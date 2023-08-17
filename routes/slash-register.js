@@ -31,7 +31,7 @@ route.post('/register', async (req,res) => {
     {
         const obj = new newProfile(req.body.USERNAME, req.body.EMAIL, req.body.PASSWORD);
         obj.save_profile();
-        res.send("<h1>Account Registered</h1>");
+        res.redirect("/home");
     }
     else 
     {

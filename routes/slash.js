@@ -36,7 +36,7 @@ route.post('/', async (req,res) => {
     const data = {f1:flag1, f2:flag2};
     if (flag1=='ok' && flag2=='ok')
     {
-        res.send("<h1>Login Succesful</h1>");
+        res.redirect("/home");
     }
     else 
     {
