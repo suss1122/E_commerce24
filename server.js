@@ -9,6 +9,7 @@ const slashRegister = require('./routes/slash-register');
 const slashHome = require('./routes/slash-home');
 const slashDetails = require('./routes/slash-details');
 const slashAccount = require('./routes/slash-account');
+const slashCart = require('./routes/slash-cart');
 // const addProduct = require('./models/products');
 
 mongoose.connect("mongodb://127.0.0.1:27017/Ecommerce", {useNewUrlParser:true});
@@ -22,6 +23,7 @@ app.use(slashRegister);
 app.use(slashHome);
 app.use(slashDetails);
 app.use(slashAccount);
+app.use(slashCart);
 
 // app.get('/temp', async(req,res) => {
 //     const obj = new addProduct('i9 Processor', '../images/poster14.jpg', 'Silver', 'Latest Intel i9 Core Processor, high CPU performance', 'Rs 24,999.00', 'Intel', 'i9', 'Only 2 left');

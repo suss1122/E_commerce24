@@ -37,4 +37,9 @@ module.exports = class newProfile
     static saveCurrentUser(input){Uname = input};
 
     static getCurrentUser() {return Uname};
+
+    static async addToCart(inp_name, inp_prod)
+    {
+        await Profile.findOneAndUpdate({Username:inp_name}, {$push:{Cart:inp_prod}}).then();
+    }
 }
