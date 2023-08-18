@@ -64,10 +64,10 @@
 
         <div class="shop">
             <% for (let i=0; i<arr.length; i++) { %>
-                <div class="item">
+                <a href="/details/<%= arr[i]._id %>" class="item">
                     <img src="<%= arr[i].Prod_img %>" alt="product" class="prod_img">
                     <img src="../images/4stars1.png" alt="stars" class="stars"><p class="name"><%= arr[i].Prod_name %></p><p class="brand"><%= arr[i].Prod_brand %></p><p class="price"><%= arr[i].Prod_price %></p>
-                </div>
+                </a>
             <% } %>
         </div>
 
