@@ -1,7 +1,7 @@
 const exp = require('express');
 const path = require('path');
-const { checkUsername, checkEmail } = require('../models/profiles');
 const route = exp.Router();
+const newProfile = require('../models/profiles');
 
 route.get('/', (req,res) => {
     res.sendFile(path.join(__dirname, '../', 'views', 'login.html'));
@@ -12,10 +12,10 @@ route.post('/', async (req,res) => {
     const post_password = req.body.PASSWORD;
 
     let check1;
-    await checkUsername(user_or_email).then(ans => {check1=ans});
+    await newProfile.checkUsername(user_or_email).then(ans => {check1=ans;});
 
     let check2;
-    await checkEmail(user_or_email).then(ans => {check2=ans});
+    await newProfile.checkEmail(user_or_email).then(ans => {check2=ans});
 
     let flag1='ok';
     if (check1==null && check2==null) {flag1='not_ok';}
