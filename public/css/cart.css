@@ -24,14 +24,14 @@ body
 {
     margin:30px auto 0px auto;
     max-width: 92%;
-    width:92%;
+    width:fit-content;
     flex-wrap: wrap;
 }
 
 .item 
 {
     flex-direction: column;
-    margin:15px auto 0px 10px;
+    margin:15px 10px 0px 0px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     overflow: hidden;
     border-radius: 5px;
@@ -111,9 +111,11 @@ body
 {
     .item:hover {background-color: rgb(218, 218, 218); outline:1px solid rgba(114, 114, 114, 0.5)}
 
+    .item{margin:15px 20px 0px 0px;}
+
     .prod_img {width: 180px; height: 200px;}
 
-    .shop {width:95%; max-width: 95%;}
+    .shop {width:fit-content; max-width: 95%;}
 
     .shop .item:nth-child(13)
     {

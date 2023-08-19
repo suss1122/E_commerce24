@@ -38,7 +38,11 @@
                 <div class="ans"><p>Color :</p><p>&nbsp&nbsp <%= color %></p></div>
                 <div class="ans"><p>Availability :</p><p>&nbsp&nbsp <%= stock %></p></div>
 
-                <a href="/addCart/<%= id %>" class="addtocart"><p>Add to Cart</p><img src="../images/cart-arrow-down-solid.svg" alt="cart"></a>
+                <% if (present==false) { %>
+                    <a href="/addCart/<%= id %>" class="addtocart"><p>Add to Cart</p><img src="../images/cart-arrow-down-solid.svg" alt="cart"></a>
+                <% } else{ %>
+                    <div class="addtocart" style="cursor: default;"><p>Added to Cart</p><img src="../images/circle-check-regular.svg" alt="cart"></div>
+                <% } %>
                 <div class="addtocart" style="margin: 15px auto 70px auto; background-color: white; outline: 1px solid #3a3a3a;"><p>Add to Wishlist</p><img src="../images/medal-solid.svg" alt="cart"></div>
             </div>
         </div>
