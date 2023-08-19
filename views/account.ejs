@@ -18,16 +18,18 @@
 
         <p class="abt">Your Orders</p>
         <div class="orders">
-            <div class="order">
-                <img src="../images/poster13.jpeg" class="left" alt="left">
-                <div class="right">
-                    <p class="prod_name">Sony Playstation 5</p>
-                    <img src="../images/4stars1.png" alt="stars" class="stars">
-                    <p class="ans">Ordered on Monday, 17th September, 2022</p>
-                    <p class="ans" style="margin-top: 5px;">Arriving by Wednesday</p>
-                    <p class="check">Check Delivery Status</p>
+            <% for (let i=0; i<arr.length; i++) { %>
+                <div class="order">
+                    <img src="<%= arr[i].Prod_img %>" class="left" alt="left">
+                    <div class="right">
+                        <p class="prod_name"><%= arr[i].Prod_name %></p>
+                        <img src="../images/4stars1.png" alt="stars" class="stars">
+                        <p class="ans">Ordered on Monday, 17th September, 2022</p>
+                        <p class="ans" style="margin-top: 5px;">Arriving by Wednesday</p>
+                        <p class="check">Check Delivery Status</p>
+                    </div>
                 </div>
-            </div>
+            <% } %>
         </div>
         
     </body>

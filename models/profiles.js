@@ -55,4 +55,12 @@ module.exports = class newProfile
 
         await Profile.findOneAndUpdate({Username:inp_name}, {Cart:temp}).then();
     }
+
+    static async order(inp_name)
+    {
+        let temp;
+        await Profile.findOne({Username:inp_name}).then(ans => {temp=ans.Cart;});
+
+        await Profile.findOneAndUpdate({Username:inp_name}, {Orders:temp}).then();
+    }
 }
