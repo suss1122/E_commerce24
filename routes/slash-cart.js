@@ -26,4 +26,13 @@ route.get('/cart',async (req,res) => {
     res.render('cart', data);
 })
 
+route.get('/del/:ID',async (req,res) => {
+    const key = req.params.ID;
+
+    const curr = newProfile.getCurrentUser();
+
+    await newProfile.removeFromCart(curr, key).then();
+    res.redirect('/cart');
+})
+
 module.exports = route;

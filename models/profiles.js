@@ -42,4 +42,17 @@ module.exports = class newProfile
     {
         await Profile.findOneAndUpdate({Username:inp_name}, {$push:{Cart:inp_prod}}).then();
     }
+
+    static async removeFromCart(inp_name, inp_prod)
+    {
+        let temp;
+        await Profile.findOne({Username:inp_name}).then(ans => {temp=ans.Cart;});
+        
+        for (let i=0; i<temp.length; i++)
+        {
+            if (temp[i]==inp_prod){temp.splice(i,1); break;}
+        }
+
+        await Profile.findOneAndUpdate({Username:inp_name}, {Cart:temp}).then();
+    }
 }
