@@ -54,7 +54,7 @@ route.post('/', async (req,res) => {
 
 route.get('/logout', (req,res) => {
     req.session.destroy();
-    redirect("/");
+    res.redirect("/");
 })
 
 module.exports = route;
