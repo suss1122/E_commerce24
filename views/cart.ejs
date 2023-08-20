@@ -12,7 +12,7 @@
 
         <div class="shop">
             <% for(let i=0; i<arr.length; i++) { %>
-                <div class="item">
+                <div class="item" onclick="window.location.href='/details/<%= arr[i]._id %>'">
                     <img src="<%= arr[i].Prod_img %>" alt="product" class="prod_img">
                     <img src="../images/4stars1.png" alt="stars" class="stars"><p class="name"><%= arr[i].Prod_name %></p><p class="brand"><%= arr[i].Prod_brand %></p><p class="price"><%= arr[i].Prod_price %></p>
                     <a href="/del/<%= arr[i]._id %>" class="del"><img src="../images/trash-can-regular.svg" alt="del"></a>

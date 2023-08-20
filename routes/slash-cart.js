@@ -12,6 +12,10 @@ route.get('/addCart/:key',async (req,res) => {
 })
 
 route.get('/cart',async (req,res) => {
+
+    if(!req.session.USER){res.send('<h1>pls login first</h1>')}
+    else{
+
     const curr = req.session.USER;
     let temp;
     await newProfile.checkUsername(curr).then(ans => {
@@ -24,6 +28,7 @@ route.get('/cart',async (req,res) => {
     }
     const data = {arr:ProdArray};
     res.render('cart', data);
+    }
 })
 
 route.get('/del/:ID',async (req,res) => {

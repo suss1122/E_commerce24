@@ -5,6 +5,9 @@ const route = exp.Router();
 
 route.get('/account',async (req,res) => {
 
+    if(!req.session.USER){res.send('<h1>pls login first</h1>')}
+    else{
+
     const curr = req.session.USER;
     let prof;
     await newProfile.checkUsername(curr).then(ans => {prof=ans});
@@ -18,9 +21,13 @@ route.get('/account',async (req,res) => {
     const data = {name:prof.Username, email:prof.Email, password:prof.Password, arr:OrdArray};
 
     res.render('account', data);
+    }
 })
 
 route.get('/order', async (req,res) => {
+
+    if(!req.session.USER){res.redirect('/ok')};
+
     const curr = req.session.USER;
 
     await newProfile.order(curr).then();
