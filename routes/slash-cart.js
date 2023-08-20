@@ -6,13 +6,13 @@ const route = exp.Router();
 route.get('/addCart/:key',async (req,res) => {
     const prodID = req.params.key;
 
-    const curr = newProfile.getCurrentUser();
+    const curr = req.session.USER;
     await newProfile.addToCart(curr, prodID).then();
     res.redirect('/cart');
 })
 
 route.get('/cart',async (req,res) => {
-    const curr = newProfile.getCurrentUser();
+    const curr = req.session.USER;
     let temp;
     await newProfile.checkUsername(curr).then(ans => {
         temp=ans.Cart;
@@ -29,7 +29,7 @@ route.get('/cart',async (req,res) => {
 route.get('/del/:ID',async (req,res) => {
     const key = req.params.ID;
 
-    const curr = newProfile.getCurrentUser();
+    const curr = req.session.USER;
 
     await newProfile.removeFromCart(curr, key).then();
     res.redirect('/cart');

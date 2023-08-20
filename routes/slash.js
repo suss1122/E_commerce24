@@ -36,8 +36,14 @@ route.post('/', async (req,res) => {
     const data = {f1:flag1, f2:flag2};
     if (flag1=='ok' && flag2=='ok')
     {
-        if(check1!=null) {newProfile.saveCurrentUser(check1.Username)}
-        else {newProfile.saveCurrentUser(check2.Username)}
+        if(check1!=null) 
+        {
+            req.session.USER = check1.Username;
+        }
+        else 
+        {
+            req.session.USER = check2.Username;
+        }
         res.redirect("/home");
     }
     else 

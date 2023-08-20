@@ -2,6 +2,7 @@ const exp = require('express');
 const path = require('path');
 const route = exp.Router();
 const newProfile = require('../models/profiles');
+const session = require('express-session');
 
 route.get('/register', (req,res) => {
     res.sendFile(path.join(__dirname, '../', 'views', 'register.html'));
@@ -31,7 +32,7 @@ route.post('/register', async (req,res) => {
     {
         const obj = new newProfile(req.body.USERNAME, req.body.EMAIL, req.body.PASSWORD);
         obj.save_profile();
-        newProfile.saveCurrentUser(req.body.USERNAME);
+        req.session.USER = req.body.USERNAME;
         res.redirect("/home");
     }
     else 

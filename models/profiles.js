@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const struc = new mongoose.Schema({Username:String, Email:String, Password:String, Id:String, Cart:Array, Orders:Array});
 const Profile = mongoose.model("profile", struc);
 
-let Uname;
 module.exports = class newProfile
 {
     constructor(name, email, pass)
@@ -33,10 +32,6 @@ module.exports = class newProfile
         await Profile.findOne({Email:input}).then(ans => {check=ans})
         return check;
     }
-
-    static saveCurrentUser(input){Uname = input};
-
-    static getCurrentUser() {return Uname};
 
     static async addToCart(inp_name, inp_prod)
     {

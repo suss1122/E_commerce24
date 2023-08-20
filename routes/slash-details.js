@@ -9,7 +9,7 @@ route.get('/details/:ID', async (req,res) => {
     let prod;
     await addProduct.fetchProduct(key).then(ans => {prod=ans;});
 
-    const curr = newProfile.getCurrentUser();
+    const curr = req.session.USER;
     let arr;
     await newProfile.checkUsername(curr).then(ans => {arr=ans.Cart;});
 

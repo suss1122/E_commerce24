@@ -3,6 +3,7 @@ const app = exp();
 const BP = require('body-parser');
 const path = require('path');
 const mongoose = require('mongoose');
+const session = require('express-session');
 
 const slashRoute = require('./routes/slash');
 const slashRegister = require('./routes/slash-register');
@@ -13,6 +14,12 @@ const slashCart = require('./routes/slash-cart');
 // const addProduct = require('./models/products');
 
 mongoose.connect("mongodb://127.0.0.1:27017/Ecommerce", {useNewUrlParser:true});
+
+app.use(session({
+    secret: "thisismysecrctekeyfhrgfgrfrty84fwir767",
+    saveUninitialized:true,
+    resave: false 
+}));
 
 app.use(BP.urlencoded({extended:true}));
 app.use(exp.static(path.join('public')));

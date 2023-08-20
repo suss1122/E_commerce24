@@ -5,7 +5,7 @@ const route = exp.Router();
 
 route.get('/account',async (req,res) => {
 
-    const curr = newProfile.getCurrentUser();
+    const curr = req.session.USER;
     let prof;
     await newProfile.checkUsername(curr).then(ans => {prof=ans});
 
@@ -21,7 +21,7 @@ route.get('/account',async (req,res) => {
 })
 
 route.get('/order', async (req,res) => {
-    const curr = newProfile.getCurrentUser();
+    const curr = req.session.USER;
 
     await newProfile.order(curr).then();
     res.redirect('/account');
