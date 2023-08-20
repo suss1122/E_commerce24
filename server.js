@@ -13,7 +13,7 @@ const slashAccount = require('./routes/slash-account');
 const slashCart = require('./routes/slash-cart');
 // const addProduct = require('./models/products');
 
-mongoose.connect("mongodb://127.0.0.1:27017/Ecommerce", {useNewUrlParser:true});
+mongoose.connect("mongodb+srv://AdityaBatgeri:Kiq2w2Ak7CR9bYgb@cluster0.d42f6ow.mongodb.net/Ecommerce?retryWrites=true&w=majority", {useNewUrlParser:true});
 
 app.use(session({
     secret: "thisismysecrctekeyfhrgfgrfrty84fwir767",
