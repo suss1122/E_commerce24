@@ -24,14 +24,4 @@ route.get('/account',async (req,res) => {
     }
 })
 
-route.get('/order', async (req,res) => {
-
-    if(!req.session.USER){res.redirect('/ok')};
-
-    const curr = req.session.USER;
-
-    await newProfile.order(curr).then();
-    res.redirect('/account');
-})
-
 module.exports = route;

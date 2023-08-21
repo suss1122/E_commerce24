@@ -11,6 +11,7 @@ const slashHome = require('./routes/slash-home');
 const slashDetails = require('./routes/slash-details');
 const slashAccount = require('./routes/slash-account');
 const slashCart = require('./routes/slash-cart');
+const slashOrder = require('./routes/slash-order');
 // const addProduct = require('./models/products');
 
 mongoose.connect("mongodb+srv://AdityaBatgeri:Kiq2w2Ak7CR9bYgb@cluster0.d42f6ow.mongodb.net/Ecommerce?retryWrites=true&w=majority", {useNewUrlParser:true});
@@ -31,6 +32,7 @@ app.use(slashHome);
 app.use(slashDetails);
 app.use(slashAccount);
 app.use(slashCart);
+app.use(slashOrder);
 
 // app.get('/temp', async(req,res) => {
 //     const obj = new addProduct('i9 Processor', '../images/poster14.jpg', 'Silver', 'Latest Intel i9 Core Processor, high CPU performance', 'Rs 24,999.00', 'Intel', 'i9', 'Only 2 left');

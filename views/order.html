@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>E-Commerce | Orders</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/fonts.css">
+        <link rel="stylesheet" href="../css/order.css">
+    </head>
+    <body>
+        <a href="/cart" class="back"><img src="../images/arrow-left-long-solid.svg" alt="back"></a>
+
+        <form action="/placeorder" method="post" autocomplete="off">
+            <p class="header">Fill the details<br>to Place Order</p>
+
+            <p class="label">Username</p>
+            <input type="text" name="USERNAME">
+
+            <p class="label">Email-Id</p>
+            <input type="text" name="EMAIL">
+
+            <p class="label">Phone Number</p>
+            <input type="text" name="PHNO">
+
+            <p class="label">Address</p>
+            <textarea name="ADDRESS"></textarea>
+
+            <input type="submit" value="Place Order">
+        </form>
+
+        <script src="../js/order.js"></script>
+    </body>
+</html>
