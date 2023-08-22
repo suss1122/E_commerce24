@@ -15,12 +15,12 @@
             <% if (f1!='ok') { %>
                 <div class="inp" style="border-color: red;">
                     <img src="../images/circle-user-regular.svg" alt="user">
-                    <input type="text" name="USERNAME_EMAIL" placeholder="e.g JaneDoe@lorem.com">
+                    <input type="text" name="USERNAME_EMAIL" placeholder="e.g JaneDoe@lorem.com" value="<%= Uval %>">
                 </div>
             <% } else{ %>
                 <div class="inp">
                     <img src="../images/circle-user-regular.svg" alt="user">
-                    <input type="text" name="USERNAME_EMAIL" placeholder="e.g JaneDoe@lorem.com">
+                    <input type="text" name="USERNAME_EMAIL" placeholder="e.g JaneDoe@lorem.com" value="<%= Uval %>">
                 </div>
             <% } %>
             <% if (f1=='not_ok') { %>
@@ -32,12 +32,12 @@
             <% if (f2!='ok') { %> 
                 <div class="inp" style="border-color: red;">
                     <img src="../images/fingerprint-solid.svg" alt="pass">
-                    <input type="password" name="PASSWORD" placeholder="Type your Password">
+                    <input type="password" name="PASSWORD" placeholder="Type your Password" value="<%= Pval %>">
                 </div>
             <% } else{ %>
                 <div class="inp">
                     <img src="../images/fingerprint-solid.svg" alt="pass">
-                    <input type="password" name="PASSWORD" placeholder="Type your Password">
+                    <input type="password" name="PASSWORD" placeholder="Type your Password" value="<%= Pval %>">
                 </div>
             <% } %>
             <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512" class="eye">

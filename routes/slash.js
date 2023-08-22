@@ -33,7 +33,8 @@ route.post('/', async (req,res) => {
         }
     }
 
-    const data = {f1:flag1, f2:flag2};
+    let Uval="";
+    let Pval="";
     if (flag1=='ok' && flag2=='ok')
     {
         if(check1!=null) 
@@ -48,6 +49,9 @@ route.post('/', async (req,res) => {
     }
     else 
     {
+        Uval=req.body.USERNAME_EMAIL;
+        Pval=req.body.PASSWORD;
+        const data = {f1:flag1, f2:flag2, Uval:Uval, Pval:Pval};
         res.render("login", data);
     }
 })

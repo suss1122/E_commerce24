@@ -15,12 +15,12 @@
             <% if (f1!='ok') { %>
                 <div class="inp" style="border-color: red;">
                     <img src="../images/circle-user-regular.svg" alt="user">
-                    <input type="text" name="USERNAME" placeholder="e.g Jane Doe">
+                    <input type="text" name="USERNAME" placeholder="e.g Jane Doe" value="<%= Uval %>">
                 </div>
             <% } else{ %>
                 <div class="inp">
                     <img src="../images/circle-user-regular.svg" alt="user">
-                    <input type="text" name="USERNAME" placeholder="e.g Jane Doe">
+                    <input type="text" name="USERNAME" placeholder="e.g Jane Doe" value="<%= Uval %>">
                 </div>
             <% } %>
             <% if(f1=='short'){ %>
@@ -32,14 +32,14 @@
             <% } %>
 
             <% if (f2!='ok') {%>
-                <div class="inp">
-                    <img src="../images/inbox-solid.svg" alt="user" style="border-color: red;">
-                    <input type="text" name="EMAIL" placeholder="e.g JaneDoe@lorem.com">
+                <div class="inp" style="border-color: red;">
+                    <img src="../images/inbox-solid.svg" alt="user">
+                    <input type="text" name="EMAIL" placeholder="e.g JaneDoe@lorem.com" value="<%= Eval %>">
                 </div>
             <% } else{ %>
                 <div class="inp">
                     <img src="../images/inbox-solid.svg" alt="user">
-                    <input type="text" name="EMAIL" placeholder="e.g JaneDoe@lorem.com">
+                    <input type="text" name="EMAIL" placeholder="e.g JaneDoe@lorem.com" value="<%= Eval %>">
                 </div>
             <% } %>
             <% if(f2=='invalid'){ %>
@@ -51,14 +51,14 @@
             <% } %>
 
             <% if (f3!='ok') { %>
-                <div class="inp">
-                    <img src="../images/fingerprint-solid.svg" alt="pass" style="border-color: red;">
-                    <input type="password" name="PASSWORD" placeholder="Type your Password">
+                <div class="inp" style="border-color: red;">
+                    <img src="../images/fingerprint-solid.svg" alt="pass">
+                    <input type="password" name="PASSWORD" placeholder="Type your Password" value="<%= Pval %>">
                 </div>
             <% } else{ %>
                 <div class="inp">
                     <img src="../images/fingerprint-solid.svg" alt="pass">
-                    <input type="password" name="PASSWORD" placeholder="Type your Password">
+                    <input type="password" name="PASSWORD" placeholder="Type your Password" value="<%= Pval %>">
                 </div>
             <% } %>
             <% if(f3=='short') { %>

@@ -37,7 +37,7 @@ route.post('/register', async (req,res) => {
     }
     else 
     {
-        const data = {f1:flag1, f2:flag2, f3:flag3};
+        const data = {f1:flag1, f2:flag2, f3:flag3, Uval:req.body.USERNAME, Eval:req.body.EMAIL, Pval:req.body.PASSWORD};
         res.render('register', data);
     }
 })
