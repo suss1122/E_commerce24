@@ -27,7 +27,12 @@
         <% } else{ %>
             <div class="addtocart" style="cursor: default;"><p>Added to Cart</p><img src="../images/circle-check-regular.svg" alt="cart"></div>
         <% } %>
-        <div class="addtocart" style="margin: 15px auto 70px auto; background-color: white; outline: 1px solid #3a3a3a;"><p>Add to Wishlist</p><img src="../images/medal-solid.svg" alt="cart"></div>
+
+        <% if (Wpresent==false) { %>
+            <a href="/addtoWishlist/<%= id %>" class="addtocart" style="margin: 15px auto 70px auto; background-color: white; outline: 1px solid #3a3a3a;"><p>Add to Wishlist</p><img src="../images/medal-solid.svg" alt="cart"></a>
+        <% } else{ %>
+            <a href="/addtoWishlist/<%= id %>" class="addtocart" style="margin: 15px auto 70px auto; background-color: white; outline: 1px solid #3a3a3a; cursor: default; pointer-events: none;"><p>Added to Wishlist</p><img src="../images/circle-check-regular.svg" alt="cart"></a>
+        <% } %>
 
         <div class="pc_grid">
             <img class="prod_img" src="<%= img %>" alt="prod">
@@ -47,7 +52,12 @@
                 <% } else{ %>
                     <div class="addtocart" style="cursor: default;"><p>Added to Cart</p><img src="../images/circle-check-regular.svg" alt="cart"></div>
                 <% } %>
-                <div class="addtocart" style="margin: 15px auto 70px auto; background-color: white; outline: 1px solid #3a3a3a;"><p>Add to Wishlist</p><img src="../images/medal-solid.svg" alt="cart"></div>
+                
+                <% if (Wpresent==false) { %>
+                    <a href="/addtoWishlist/<%= id %>" class="addtocart" style="margin: 15px auto 70px auto; background-color: white; outline: 1px solid #3a3a3a;"><p>Add to Wishlist</p><img src="../images/medal-solid.svg" alt="cart"></a>
+                <% } else{ %>
+                    <a href="/addtoWishlist/<%= id %>" class="addtocart" style="margin: 15px auto 70px auto; background-color: white; outline: 1px solid #3a3a3a; cursor: default; pointer-events: none;"><p>Added to Wishlist</p><img src="../images/circle-check-regular.svg" alt="cart"></a>
+                <% } %>
             </div>
         </div>
     </body>
