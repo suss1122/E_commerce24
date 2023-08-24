@@ -4,7 +4,7 @@ const route = exp.Router();
 const path = require('path');
 
 route.get('/order', (req,res) => {
-    if(!req.session.USER){res.send("<h1>pls login first</h1>")}
+    if(!req.session.USER){res.redirect('/warn')}
     else{
 
     res.sendFile(path.join(__dirname, '../', 'views', 'order.html'));
@@ -13,7 +13,7 @@ route.get('/order', (req,res) => {
 
 route.post('/placeorder', async (req,res) => {
 
-    if(!req.session.USER){res.send("<h1>pls login first</h1>")}
+    if(!req.session.USER){res.redirect('/warn')}
     else{
 
     const curr = req.session.USER;

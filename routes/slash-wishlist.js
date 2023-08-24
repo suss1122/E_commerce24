@@ -4,7 +4,7 @@ const addProduct = require('../models/products');
 const route = exp.Router();
 
 route.get('/wishlist', async (req,res) => {
-    if (!req.session.USER) {res.send("<h1>Pls Login First</h1>")}
+    if (!req.session.USER) {res.redirect('/warn')}
     else {
 
     const curr=req.session.USER;
@@ -22,7 +22,7 @@ route.get('/wishlist', async (req,res) => {
 })
 
 route.get('/addtoWishlist/:ID', async (req,res) => {
-    if (!req.session.USER) {res.send("<h1>Pls Login First</h1>")}
+    if (!req.session.USER) {res.redirect('/warn')}
     else {
     
     const key = req.params.ID;
@@ -43,7 +43,7 @@ route.get('/delFromWish/:ID', async (req,res) => {
 })
 
 route.get('/wishtocart', async (req,res) => {
-    if (!req.session.USER) {res.send("<h1>Pls Login First</h1>")}
+    if (!req.session.USER) {res.redirect('/warn')}
     else {
     
     const curr = req.session.USER;

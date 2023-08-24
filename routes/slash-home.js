@@ -4,7 +4,7 @@ const route = exp.Router();
 
 route.get('/home', async (req,res) => {
 
-    if(!req.session.USER){res.send('<h1>pls login first</h1>')}
+    if(!req.session.USER){res.redirect('/warn')}
     else{
 
     let temp;

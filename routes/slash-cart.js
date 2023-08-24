@@ -13,7 +13,7 @@ route.get('/addCart/:key',async (req,res) => {
 
 route.get('/cart',async (req,res) => {
 
-    if(!req.session.USER){res.send('<h1>pls login first</h1>')}
+    if(!req.session.USER){res.redirect('/warn')}
     else{
 
     const curr = req.session.USER;
