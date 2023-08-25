@@ -96,4 +96,12 @@ module.exports = class newProfile
             }
         }
     }
+
+    static async updateOrder(inp_name, inp_order)
+    {
+        let temp;
+        await newProfile.checkUsername(inp_name).then(ans => {temp=ans.Orders});
+        temp.push(inp_order);
+        await Profile.findOneAndUpdate({Username:inp_name}, {Orders:temp}).then();
+    }
 }

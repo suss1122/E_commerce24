@@ -1,3 +1,7 @@
+var date = document.getElementsByTagName("input")[5];
+const d = new Date();
+date.value = d; 
+
 var sub = document.getElementsByTagName('input')[4];
 var input = document.getElementsByTagName('input');
 var text = document.getElementsByTagName('textarea')[0];

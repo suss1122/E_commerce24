@@ -2,6 +2,7 @@ const exp = require('express');
 const newProfile = require('../models/profiles');
 const route = exp.Router();
 const path = require('path');
+const newOrder = require('../models/orders');
 
 route.get('/order', (req,res) => {
     if(!req.session.USER){res.redirect('/warn')}
@@ -18,7 +19,13 @@ route.post('/placeorder', async (req,res) => {
 
     const curr = req.session.USER;
 
-    await newProfile.order(curr).then();
+    let temp;
+    await newProfile.checkUsername(curr).then(ans => {temp=ans.Cart});
+
+    // await newProfile.order(curr).then();
+    const obj = new newOrder(curr, req.body.date, temp);
+    obj.upload();
+
     res.redirect('/account');
     }
 })
