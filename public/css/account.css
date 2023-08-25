@@ -60,62 +60,59 @@ body
     margin:auto auto auto 10px;
 }
 
-.orders
+.all 
 {
-    width:92%;
+    margin:30px auto 0px auto;
     max-width: 92%;
     flex-wrap: wrap;
-    margin:30px auto 70px auto;
+    gap:15px;
 }
 
-.order
+.invoice
 {
-    padding:10px;
-    border-radius: 10px;
+    flex-direction: column;
+    padding:15px;
+    border-radius: 5px;
     border:1px solid rgba(144, 144, 144, 0.5);
-    margin:10px auto 0px auto;
 }
 
-.order .left
+.header
 {
-    width:100px;
-    height: 130px;
-    margin:auto;
-    padding-right: 20px;
-    border-right: 1px solid rgba(144, 144, 144, 0.5);
-}
-
-.right{flex-direction: column; margin:auto}
-
-.prod_name
-{
-    font:15px Montserrat-ExtraBold;
+    font:18px Montserrat-Medium;
     color:#3a3a3a;
-    margin:20px auto 0px 20px;
-    max-width: 90%;
-    word-wrap: break-word;
+    margin:0px auto 0px 0px;
 }
 
-.stars
+.label
 {
-    height:12px;
-    width: auto;
-    margin:5px auto 0px 20px;
+    margin:10px auto 0px 0px;
 }
 
-.ans
+.label p:nth-child(1)
 {
-    font:10px Montserrat-Medium;
+    font:13px Montserrat-Medium;
     color:#3a3a3a;
-    margin:10px auto 0px 20px;
+    margin:0;
 }
 
-.check
+.label p:nth-child(2)
 {
-    font:10px Montserrat-Regular;
-    color:blue;
-    text-decoration: underline;
-    margin:15px auto 0px auto;
+    font:13px Montserrat-Regular;
+    color:#3a3a3a;
+    margin:0;
+}
+
+.det
+{   
+    display: block;
+    font:13px Montserrat-Medium;
+    color:white;
+    text-align: center;
+    width:90%;
+    margin:20px auto 0px auto;
+    border-radius: 50px;
+    padding: 7px 0px 7px 0px;
+    background-color: coral;
     cursor: pointer;
 }
 

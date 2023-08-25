@@ -1,6 +1,7 @@
 const exp = require('express');
 const newProfile = require('../models/profiles');
 const addProduct = require('../models/products');
+const newOrder = require('../models/orders');
 const route = exp.Router();
 
 route.get('/account',async (req,res) => {
@@ -9,16 +10,16 @@ route.get('/account',async (req,res) => {
     else{
 
     const curr = req.session.USER;
-    let prof;
-    await newProfile.checkUsername(curr).then(ans => {prof=ans});
+    let prof, ord;
+    await newProfile.checkUsername(curr).then(ans => {prof=ans; ord=ans.Orders});
 
-    const OrdArray=[];
-    for (let i=0; i<prof.Orders.length; i++)
+    const arr = [];
+    for (let i=0; i<ord.length; i++)
     {
-        await addProduct.fetchProduct(prof.Orders[i]).then(ans => {OrdArray.push(ans)});
+        await newOrder.getOrder(ord[i]).then(ans => {arr.push(ans)});
     }
 
-    const data = {name:prof.Username, email:prof.Email, password:prof.Password, arr:OrdArray};
+    const data = {name:prof.Username, email:prof.Email, password:prof.Password, arr:arr};
 
     res.render('account', data);
     }

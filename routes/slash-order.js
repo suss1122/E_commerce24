@@ -26,8 +26,12 @@ route.post('/placeorder', async (req,res) => {
     const obj = new newOrder(curr, req.body.date, temp);
     obj.upload();
 
-    res.redirect('/account');
+    res.redirect('/ref_account');
     }
+})
+
+route.get('/ref_account', (req,res) => {
+    res.redirect('/account');
 })
 
 module.exports = route;
