@@ -19,13 +19,20 @@ module.exports = class newOrder
         const up = new Order({Username:this.name, Order_date:this.date, Products:this.arr, Order_Id:this.order_ID});
         up.save();
 
-        await newProfile.updateOrder(this.name, this.id).then();
+        await newProfile.updateOrder(this.name, this.order_ID).then();
     }
 
     static async getOrder(ID)
     {
         let temp;
         await Order.findOne({id:ID}).then(ans => {temp=ans});
+        return temp;
+    }
+
+    static async getOrdersByUsername(inp_name)
+    {
+        let temp;
+        await Order.find({Username:inp_name}).then(ans => {temp=ans});
         return temp;
     }
 }

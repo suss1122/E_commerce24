@@ -10,16 +10,13 @@ route.get('/account',async (req,res) => {
     else{
 
     const curr = req.session.USER;
-    let prof, ord;
-    await newProfile.checkUsername(curr).then(ans => {prof=ans; ord=ans.Orders});
+    let prof;
+    await newProfile.checkUsername(curr).then(ans => {prof=ans});
 
-    const arr = [];
-    for (let i=0; i<ord.length; i++)
-    {
-        await newOrder.getOrder(ord[i]).then(ans => {arr.push(ans)});
-    }
+    let temp;
+    await newOrder.getOrdersByUsername(curr).then(ans => {temp=ans});
 
-    const data = {name:prof.Username, email:prof.Email, password:prof.Password, arr:arr};
+    const data = {name:prof.Username, email:prof.Email, password:prof.Password, arr:temp};
 
     res.render('account', data);
     }
