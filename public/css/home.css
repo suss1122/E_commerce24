@@ -164,12 +164,13 @@ body
     max-width: 92%;
     width:92%;
     flex-wrap: wrap;
+    gap:15px;
 }
 
 .item 
 {
     flex-direction: column;
-    margin:15px auto 0px 10px;
+    margin:0;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     overflow: hidden;
     border-radius: 5px;
@@ -398,10 +399,5 @@ body
 
     .prod_img {width: 180px; height: 200px;}
 
-    .shop {width:95%; max-width: 95%;}
-
-    .shop .item:nth-child(13)
-    {
-        margin-right: 2%;
-    }
+    .shop {width:95%; max-width: 95%; gap:20px}
 }

@@ -39,7 +39,7 @@ app.use(slashWishlist);
 app.use(slashWarn);
 
 // app.get('/temp', async(req,res) => {
-//     const obj = new addProduct('i9 Processor', '../images/poster14.jpg', 'Silver', 'Latest Intel i9 Core Processor, high CPU performance', 'Rs 24,999.00', 'Intel', 'i9', 'Only 2 left');
+//     const obj = new addProduct('4k Monitor', '../images/poster26.jpeg', 'Black', 'DELL 390Hz Monitor, Wall mount attachable, 42 inch Display.', 'Rs 799.00', 'DELL', 'SuperDSP', 'In Stock');
 //     obj.append();
 //     res.send("ok");
 // })
