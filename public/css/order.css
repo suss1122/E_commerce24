@@ -43,17 +43,17 @@ form
 
 .label p:nth-child(2) {color:coral;}
 
-input[type="text"]
+input[type="text"], input[type="number"]
 {
     border:1px solid rgba(0, 0, 0, 1);
     margin:5px auto 0px 0px;
     font:12px Montserrat-Regular;
     width: 250px;
     max-width: 250px;
-    padding: 3px 0px 3px 5px;
+    padding: 5px 0px 5px 7px;
 }
 
-input[type="text"]:focus
+input[type="text"]:focus, input[type="number"]:focus
 {
     outline: none;
 }
@@ -149,6 +149,16 @@ input[type="submit"]
     position: relative;
     bottom: 55px;
 }
+
+.pno {margin:10px auto 0px 0px;}
+
+.pno p
+{
+    font:15px Montserrat-Bold;
+    color:#3a3a3a;
+    margin:auto 10px auto 0px;
+}
+
 
 @media screen and (min-width:800px)
 {

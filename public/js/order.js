@@ -9,7 +9,7 @@ var text = document.getElementsByTagName('textarea')[0];
 for (let i=0; i<3; i++)
 {
     input[i].addEventListener('input', () => {
-        if(input[0].value!="" && input[1].value!="" && input[2].value!="" && text.value!="")
+        if(input[0].value!="" && input[1].value!="" && input[2].value.length==10 && text.value!="")
         {
             sub.style.backgroundColor = 'blue';
             sub.style.pointerEvents = 'all';
@@ -23,7 +23,7 @@ for (let i=0; i<3; i++)
 }
 
 text.oninput = () => {
-    if(input[0].value!="" && input[1].value!="" && input[2].value!="" && text.value!="")
+    if(input[0].value!="" && input[1].value!="" && input[2].value.length==10 && text.value!="")
     {
         sub.style.backgroundColor = 'blue';
         sub.style.pointerEvents = 'all';
@@ -42,7 +42,7 @@ for (let j=1; j<10; j=j+2)
 }
 
 var pay = document.getElementsByClassName("pay")[0];
-pay.style.backgroundColor = 'rgba(200, 200, 255, 0.4)';
+pay.style.backgroundColor = 'rgba(255, 127, 80, 0.1)';
 
 var mode = document.getElementsByClassName("mode")[0];
 var down = document.getElementsByClassName("down")[0];
@@ -83,4 +83,12 @@ for (let i=1; i<allPay.length; i++)
         mode.style.overflowY = 'hidden';
         down.style.transform = 'none';
     })
+}
+
+input[2].oninput = () => {
+    if (input[2].value.length >10)
+    {
+        let temp = (input[2].value).substring(0,10);
+        input[2].value = temp;
+    }
 }
