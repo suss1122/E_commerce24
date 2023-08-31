@@ -162,9 +162,8 @@ body
 {
     margin:30px auto 0px auto;
     max-width: 92%;
-    width:92%;
     flex-wrap: wrap;
-    gap:15px;
+    gap:20px;
 }
 
 .item 
