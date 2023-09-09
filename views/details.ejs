@@ -62,20 +62,25 @@
         </div>
         <div class="hr"></div>
 
-        <p class="title" style="display: none;">You have already added a Review for this Product!</p>
-        <form class="reviews" action="/review/<%= id %>" method="post" autocomplete="off">
-            <p>Add a Review</p>
-            <textarea name="user_review"></textarea>
-            <input type="submit" value="Post Review">
-        </form>
+        <% if (exists==true) { %>
+            <p class="title">You have already added a Review for this Product!</p>
+        <% } else { %>
+            <form class="reviews" action="/review/<%= id %>" method="post" autocomplete="off">
+                <p>Add a Review</p>
+                <textarea name="user_review"></textarea>
+                <input type="submit" value="Post Review">
+            </form>
+        <% } %>
 
-        <p class="title">See other Reviews</p>
-        <div class="comments">
-            <div class="comment">
-                <div><img src="../images/circle-user-regular.svg" alt="user"><p>Username</p></div>
-                <p class="content">Nice Product!! I really enjoyed it. Might order it again.</p>
+        <% for (let i=0; i<rs.length; i++) { %>
+            <p class="title">See other Reviews</p>
+            <div class="comments">
+                <div class="comment">
+                    <div><img src="../images/circle-user-regular.svg" alt="user"><p><%= rs[i].Rev_user %></p></div>
+                    <p class="content"><%= rs[i].Rev %></p>
+                </div>
             </div>
-        </div>
+        <% } %>
 
         <script src="../js/details.js"></script>
     </body>
