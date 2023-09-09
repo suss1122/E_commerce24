@@ -103,13 +103,105 @@ body
 
 .pc_grid{display: none;}
 
+form 
+{
+    margin:0px auto 0px 20px;
+    flex-direction: column;
+}
+
+form p 
+{
+    margin:0px auto 0px 0px;
+    font:18px Montserrat-Bold;
+    color:#3a3a3a;
+}
+
+textarea
+{
+    margin:10px auto 0px 0px;
+    border:1px solid #3a3a3a;
+    padding:7px;
+    font:12px Montserrat-Medium;
+    color:#3a3a3a;
+    word-wrap: break-word;
+    width:300px;
+    max-width: 300px;
+    height:100px;
+    max-height: 100px;
+    resize: none;
+}
+
+textarea:focus{outline: none;}
+
+input
+{
+    font: 12px Montserrat-Medium;
+    color:coral;
+    padding:6px 10px 6px 10px;
+    border-radius: 5px;
+    border:2px solid coral;
+    background-color: white;
+    width: auto;
+    margin:10px auto 0px auto;
+    cursor: pointer;
+}
+
+.title
+{
+    font:18px Montserrat-Bold;
+    color:#3a3a3a;
+    margin:30px auto 0px 20px;
+}
+
+.comments
+{
+    margin:10px auto 100px 20px;
+    flex-wrap: wrap;
+    gap:15px;
+    max-width: 95%;
+}
+
+.comment
+{
+    flex-direction: column;
+    padding:10px;
+    border-radius: 5px;
+    border:1px solid rgba(114, 114, 114, 0.5);
+    width: 300px;
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.comment div {margin:0px auto 0px 0px;}
+.comment div img {width:20px; height:20px; margin:auto 0px auto 0px}
+.comment div p {font:15px Montserrat-Medium; margin:auto auto auto 10px;}
+
+.content
+{
+    width:100%;
+    max-width: 100%;
+    word-wrap: break-word;
+    max-height: 250px;
+    overflow-y: scroll;
+    font:15px Montserrat-Regular;
+    color:#3a3a3a;
+    margin:10px auto 0px 0px;
+}
+
+.hr
+{
+    width:100%;
+    margin:0px 0px 30px 0px;
+    border:1px solid rgb(252, 126, 80, 0.5);
+}
+
 @media screen and (min-width:800px)
 {
     .desc, .abt, .ans, .addtocart, .prod_img, .price{display: none;}
 
     .pc_grid, .pc_grid .desc, .pc_grid .abt, .pc_grid .ans, .pc_grid .addtocart, .pc_grid .prod_img, .pc_grid .price{display: flex;}
 
-    .pc_grid{margin:40px auto 50px auto; width:92%; max-width: 92%;}
+    .pc_grid{margin:40px auto 30px auto; width:92%; max-width: 92%;}
 
     .pc_grid .prod_img{width: 300px; height: 400px; margin:0px auto auto auto;}
 
@@ -125,4 +217,10 @@ body
     .pc_grid .addtocart:hover {background-color: rgb(205, 204, 204);}
 
     .pc_grid div:nth-child(8):hover {background-color:rgb(213, 146, 127) ;}
+
+    input:hover{background-color: rgb(245, 245, 245);}
+
+    form, form p, textarea, .title{margin-left: auto;}
+    textarea{width:70vw; max-width: 70vw;}
+    .title{margin-top: 60px;}
 }
