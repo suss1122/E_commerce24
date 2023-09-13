@@ -13,4 +13,12 @@ route.post('/review/:ID', async (req,res) => {
     }
 })
 
+route.get('/delComment/:tmp', async (req,res) =>{ 
+    const key = req.params.tmp;
+    const curr = req.session.USER;
+    await addProduct.deleteRev(key, curr).then();
+
+    res.redirect('/details/'+key);
+})
+
 module.exports = route;

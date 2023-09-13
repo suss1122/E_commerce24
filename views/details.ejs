@@ -78,6 +78,9 @@
                 <div class="comment">
                     <div><img src="../images/circle-user-regular.svg" alt="user"><p><%= rs[i].Rev_user %></p></div>
                     <p class="content"><%= rs[i].Rev %></p>
+                    <% if (rs[i].Rev_user==session_user) { %>
+                        <a href="/delComment/<%= id %>" class="del"><img src="../images/trash-can-regular.svg" alt="del"></a>
+                    <% } %>
                 </div>
             <% } %>
         </div>

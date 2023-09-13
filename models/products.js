@@ -53,4 +53,9 @@ module.exports = class addProduct
         }
         return exists;
     }
+
+    static async deleteRev(post_id, user_id)
+    {
+        await Product.findByIdAndUpdate(post_id, {$pull:{Prod_review:{Rev_user:user_id}}}).then()
+    }
 }

@@ -195,6 +195,18 @@ input
     border:1px solid rgb(252, 126, 80, 0.5);
 }
 
+.del
+{
+    width:20px;
+    height: 20px;
+    padding: 5px;
+    margin:auto 5px 0px auto;
+    padding: 7px;
+    transition-property: transform;
+    transition-duration: 0.5s;
+    cursor: pointer;
+}
+
 @media screen and (min-width:800px)
 {
     .desc, .abt, .ans, .addtocart, .prod_img, .price{display: none;}
@@ -223,4 +235,6 @@ input
     form, form p, textarea, .title{margin-left: auto;}
     textarea{width:70vw; max-width: 70vw;}
     .title{margin-top: 60px;}
+
+    .del:hover{transform: translate3d(3px,3px,3px);}
 }
